@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import NavBar from "./components/NavBar";
+import MenuItem1 from "./components/MenuItems/MenuItem1";
+import MenuItem2 from "./components/MenuItems/MenuItem2";
+import MenuItem3 from "./components/MenuItems/MenuItem3";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Switch, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar></NavBar>
+      <Switch>
+        <Route path="/" exact component={MenuItem1} />
+        <Route path="/MenuItem2" component={MenuItem2} />
+        <Route path="/MenuItem3" component={MenuItem3} />
+      </Switch>
     </div>
   );
 }
